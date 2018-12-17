@@ -27,4 +27,11 @@ export class HeroesComponent implements OnInit {
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
+
+  remove(hero: Hero): void {
+    const index: number = this.heroes.indexOf(hero);
+    if (index !== -1) {
+      this.heroes.splice(index, 1);
+  }   
+  }
 }
