@@ -40,50 +40,16 @@ export class HeroesComponent implements OnInit {
   {
     this.getHeroes();
     var listToSort = [11, 12, 13, 14, 15];
-    var itemsToSlice = [];
 
-    this.heroes.forEach((item) => 
-    { 
-      if(!listToSort.includes(item.id))
-      {
-        var index = this.heroes.indexOf(item);
-        if (index > -1) {
-          itemsToSlice.push(item);
-        } 
-      }
-    })
-
-    itemsToSlice.forEach((item) =>
-    {
-      this.heroes = this.heroes.filter(function( obj ) {
-      return obj.name !== item.name;
-    });
-    })
+    this.heroes = this.heroes.filter(x =>  listToSort.includes(x.id));
   }
 
   filter2()
   {
     this.getHeroes();
     var listToSort = [16, 17, 18, 19, 20];
-    var itemsToSlice = [];
 
-    this.heroes.forEach((item) => 
-    { 
-      if(!listToSort.includes(item.id))
-      {
-        var index = this.heroes.indexOf(item);
-        if (index > -1) {
-          itemsToSlice.push(item);
-        } 
-      }
-    })
-
-    itemsToSlice.forEach((item) =>
-    {
-      this.heroes = this.heroes.filter(function( obj ) {
-      return obj.name !== item.name;
-    });
-    })
+    this.heroes = this.heroes.filter(x =>  listToSort.includes(x.id));
   }
 
   public setHeroes(heroes: Hero[])
